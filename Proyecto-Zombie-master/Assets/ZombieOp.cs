@@ -8,6 +8,7 @@ public class ZombieOp : MonoBehaviour
 
     // public string [] Gustos;
     public CosasZombie datosZombi;
+   
 
      
 
@@ -17,7 +18,8 @@ public class ZombieOp : MonoBehaviour
 
         datosZombi.colorEs = (CosasZombie.ColorZombie)Random.Range(0, 3);
 
-        
+        int dargusto = Random.Range(0, 5);
+        datosZombi.sabroso = (CosasZombie.Gustos)dargusto;
 
     }
 
@@ -27,11 +29,7 @@ public class ZombieOp : MonoBehaviour
         
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        
-    }
-
+    
 
 }
 
