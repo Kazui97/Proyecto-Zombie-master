@@ -8,6 +8,7 @@ public class Generador : MonoBehaviour
     GameObject Gente;
     CosasZombie datoZombi;
     CosasCiudadanos datoCiudadanos;
+   
     
 
     void Start()
@@ -18,7 +19,10 @@ public class Generador : MonoBehaviour
         int numPersonaje = Random.Range(9, 20);
         for (int i = 0; i < numPersonaje; i++)
         {
-            ZombieMesh = GameObject.CreatePrimitive(PrimitiveType.Capsule);
+
+
+
+            ZombieMesh = GameObject.CreatePrimitive(PrimitiveType.Cube);
             ZombieMesh.AddComponent<ZombieOp>();
             datoZombi = ZombieMesh.GetComponent<ZombieOp>().datosZombi;
             switch (datoZombi.colorEs)
@@ -39,6 +43,7 @@ public class Generador : MonoBehaviour
             Vector3 pos = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
             ZombieMesh.transform.position = pos;
             ZombieMesh.AddComponent<Rigidbody>();
+            ZombieMesh.name = "Zombi";
 
             Gente = GameObject.CreatePrimitive(PrimitiveType.Cube);
             Gente.AddComponent<CiudadanoOp>();
@@ -46,6 +51,7 @@ public class Generador : MonoBehaviour
             Vector3 po = new Vector3(Random.Range(-10, 10), 0, Random.Range(-10, 10));
             Gente.transform.position = po;
             Gente.AddComponent<Rigidbody>();
+            Gente.name = "Gente";
 
 
         }
